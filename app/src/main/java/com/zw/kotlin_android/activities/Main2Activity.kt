@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.zw.kotlin_android.R
+import com.zw.kotlin_android.demo1.*
 import kotlinx.android.synthetic.main.activity_main2.*
 
 class Main2Activity : AppCompatActivity(), View.OnClickListener {
@@ -23,6 +24,35 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener {
         btn_toast.setOnClickListener(this)
         btn_op.setOnClickListener(this)
         btn_fun.setOnClickListener(this)
+        btn_class1.setOnClickListener {
+            Log.i(TAG, "view id: " + it.id)
+
+            var test1 = Test1(1, "hello Test1", 2)
+            // 第一种写法
+            var m: MyInterface = object : MyInterface {
+                override fun callback(errorCode: Int, errorMsg: String) {
+                    Log.i(TAG, "1------ " + errorCode + ",errorMsg: " + errorMsg)
+                }
+            }
+            test1.setCB(m)
+            test1.test()
+
+            // 第二种写法
+            var m1: MyInterface = MyInterface_Impl()
+            test1.setCB(m1)
+            test1.test()
+
+            // 传递函数实现类似回调的效果
+            test1.setCB1(this::callback)
+            test1.test1()
+            val cb1 = fun(c: Int, s: String): Unit {
+                Log.i(TAG, "xxxxxxxxxxxxxxxxxxx")
+            }
+            test1.setCB1(cb1)
+            test1.test1()
+        }
+
+        btn_class2.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -47,6 +77,20 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener {
             // 此模式对组件之间的通信（其方式与在 Java 中使用回调接口相同）很有用。
             R.id.btn_fun -> {
                 sync_fun("hello", this::callback)// 注意写法
+            }
+
+            R.id.btn_class2 -> {
+                var stu = Student(0)
+                Log.i(TAG, "Student age: " + stu.age)
+
+                var stu1 = Student1(1)
+                Log.i(TAG, "Student1 age: " + stu1.age)
+
+                var stu2 = Student2(2)
+                Log.i(TAG, "Student2 age: " + stu2.age)
+
+                var stu3 = Student3(3)
+                Log.i(TAG, "Student3 age: " + stu3.age)
             }
         }
     }
