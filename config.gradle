@@ -1,0 +1,23 @@
+ext {
+    // 创建了一个名为android的，类型为map的变量，groovy中可以用[]来创建map类型。
+    // 那么就是一个map下面又创建了一个map，且名字叫做android。
+    android = [
+//            compileSdkVersion: 23,
+//            buildToolsVersion: "23.0.2",
+//            minSdkVersion    : 14,
+//            targetSdkVersion : 22,
+
+// kotlin_version   : '1.3.40'
+    ]
+    dependencies = [
+            appcompatV7: 'com.android.support:appcompat-v7:23.2.1',
+            design     : 'com.android.support:design:23.2.1'
+    ]
+
+    // 用{}来创建函数类型对象，即闭包，赋值给变量myMethod
+    // rootProject.ext.myMethod("1","2")
+    ext.myMethod = { param1, param2 ->
+        // 闭包体
+        System.out.println("hello method")
+    }
+}
