@@ -91,8 +91,21 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener {
 
                 var stu3 = Student3(3)
                 Log.i(TAG, "Student3 age: " + stu3.age)
+
+                var stu4 = Student4(4, 5)
+                Log.i(TAG, "Student4 age: " + stu4.age + ",age1: " + stu4.age1)
+
+                var cat = Cat()
+                cat.weight = 100f
+                cat.sys()
             }
+
         }
+    }
+
+    suspend fun getData(): String {
+        Log.i("xc", "getData ......")
+        return "Hello"
     }
 
     fun sync_fun(user: String, cb: (Int, String) -> Unit) {
@@ -103,4 +116,6 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener {
     fun callback(errorCode: Int, errorMsg: String) {
         Log.i(TAG, "callback errorCode: " + errorCode + ",errorMsg: " + errorMsg)
     }
+
+
 }

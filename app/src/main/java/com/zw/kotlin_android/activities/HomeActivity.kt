@@ -15,12 +15,22 @@ class HomeActivity : AppCompatActivity() {
         // 设置OnClickListener
         btn_MainActivity.setOnClickListener {
             // 构造Intent
-            val intent = Intent(this@HomeActivity, MainActivity().javaClass)
+            val intent = Intent(this@HomeActivity, Main1Activity().javaClass)
             startActivity(intent)
         }
 
         btn_Main2Activity.setOnClickListener {
             val intent = Intent(this@HomeActivity, Main2Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_Main3Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main3Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_Main4Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main4Activity::class.java)
             startActivity(intent)
         }
     }
