@@ -30,8 +30,20 @@ class HomeActivity : AppCompatActivity() {
         }
 
         btn_Main4Activity.setOnClickListener {
-            var intent = Intent(this@HomeActivity, Main4Activity::class.java)
+            var intent = Intent(this@HomeActivity, Main4Activity_Base::class.java)
             startActivity(intent)
         }
+
+        btn_Main5Activity_Class.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main5Activity_Class::class.java)
+            startActivity(intent)
+        }
+
+        btn_Main6Activity_Lambda.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main6Activity_Lambda::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }

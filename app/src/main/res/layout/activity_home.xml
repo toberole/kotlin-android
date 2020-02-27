@@ -30,7 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Main2Activity" />
 
-
     <Button
         android:id="@+id/btn_Main4Activity"
         android:layout_width="match_parent"
@@ -38,6 +37,22 @@
         android:text="BASE_Main4Activity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Main3Activity" />
+
+    <Button
+        android:id="@+id/btn_Main5Activity_Class"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Main5Activity_Class"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity" />
+
+    <Button
+        android:id="@+id/btn_Main6Activity_Lambda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Main6Activity_Lambda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Main5Activity_Class" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
