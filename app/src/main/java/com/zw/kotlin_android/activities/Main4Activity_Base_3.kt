@@ -3,6 +3,7 @@ package com.zw.kotlin_android.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zw.kotlin_android.R
+import com.zw.kotlin_android.demo1.Enum1
 import com.zw.kotlin_android.utils.LogUtil
 
 class Main4Activity_Base_3 : AppCompatActivity() {
@@ -12,6 +13,9 @@ class Main4Activity_Base_3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main4__base_3)
+
+        var e = Enum1.E1
+        LogUtil.i("e-xxx", "name = ${e.name},ordinal = ${e.ordinal}")
 
         test2()
     }

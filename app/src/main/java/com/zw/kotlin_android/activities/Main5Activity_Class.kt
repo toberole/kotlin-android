@@ -44,6 +44,7 @@ class Main5Activity_Class : AppCompatActivity() {
         var p = Person("hello person")
         p.sys()
 
+
         var p1 = Person(11, "xiaohong")
         LogUtil.i("person", "p1: " + p1)
     }
