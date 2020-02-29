@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Looper
 import android.view.View
 import com.zw.kotlin_android.R
+import com.zw.kotlin_android.demo1.Data_class1
 import com.zw.kotlin_android.demo1.Person
 import com.zw.kotlin_android.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_main5__class.*
@@ -14,6 +15,20 @@ class Main5Activity_Class : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main5__class)
+
+        var data_class1 = Data_class1("hello", "world")
+        LogUtil.i("data-xxx", data_class1.toString())
+
+        // 使用copy修改部分属性
+        var data_class2 = Data_class1("a", "b")
+        LogUtil.i("data-xxx", "tostring = ${data_class2.toString()}, hashCode = ${data_class2.hashCode()}")
+        var data_class3 = data_class2.copy(s = "a_1")
+        LogUtil.i("data-xxx", "tostring = ${data_class3.toString()}, hashCode = ${data_class3.hashCode()}")
+
+        // 解构声明
+        var data_class4 = Data_class1("解构声明 s", "解构声明 s1")
+        var (s, s1) = data_class4
+        LogUtil.i("data-xxx", "s = $s,s1 = $s1")
 
         // 匿名内部类
         btn_test1.setOnClickListener(object : View.OnClickListener {
@@ -43,8 +58,6 @@ class Main5Activity_Class : AppCompatActivity() {
     private fun test1() {
         var p = Person("hello person")
         p.sys()
-
-
         var p1 = Person(11, "xiaohong")
         LogUtil.i("person", "p1: " + p1)
     }

@@ -8,7 +8,7 @@ import com.zw.kotlin_android.utils.LogUtil
  */
 class Person(var name: String/*主构造器*/) {
     var age: Int = 0
-        get() = age
+        get() = field
         set(value) {
             field = value
         }
