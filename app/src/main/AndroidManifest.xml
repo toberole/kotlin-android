@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.Main4Activity_Base_3"></activity>
+        <activity android:name=".activities.CoroutinesActivity"></activity>
+        <activity android:name=".activities.Main10Activity" />
+        <activity android:name=".activities.SingleTonActivity" />
+        <activity android:name=".activities.Main9Activity" />
+        <activity android:name=".activities.Main8Activity" />
+        <activity android:name=".activities.Main7Activity" />
+        <activity android:name=".activities.Main4Activity_Base_3" />
         <activity android:name=".activities.Main4Activity_Base_2" />
         <activity android:name=".activities.Main4Activity_Base_1" />
         <activity android:name=".activities.Main6Activity_Lambda" />

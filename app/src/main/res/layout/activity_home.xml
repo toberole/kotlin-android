@@ -1,82 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".activities.HomeActivity">
 
-    <Button
-        android:id="@+id/btn_MainActivity"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MainActivity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_Main2Activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main2Activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_MainActivity" />
+        <TextView
+            android:id="@+id/tv_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="**** DEMO ****"
+            android:textColor="#FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_Main3Activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main3Activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main2Activity" />
+        <Button
+            android:id="@+id/btn_MainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MainActivity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_test" />
 
-    <Button
-        android:id="@+id/btn_Main4Activity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="BASE_Main4Activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main3Activity" />
+        <Button
+            android:id="@+id/btn_Main2Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main2Activity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_MainActivity" />
 
-    <Button
-        android:id="@+id/btn_Main5Activity_Class"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main5Activity_Class"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity" />
+        <Button
+            android:id="@+id/btn_Main3Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main3Activity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main2Activity" />
 
-    <Button
-        android:id="@+id/btn_Main6Activity_Lambda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main6Activity_Lambda"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main5Activity_Class" />
+        <Button
+            android:id="@+id/btn_Main4Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BASE_Main4Activity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main3Activity" />
 
-    <Button
-        android:id="@+id/btn_Main4Activity_Base_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main4Activity_Base_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main6Activity_Lambda" />
+        <Button
+            android:id="@+id/btn_Main5Activity_Class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main5Activity_Class"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity" />
 
-    <Button
-        android:id="@+id/btn_Main4Activity_Base_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="操作符与操作符重载"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity_Base_1" />
+        <Button
+            android:id="@+id/btn_Main6Activity_Lambda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main6Activity_Lambda"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main5Activity_Class" />
 
-    <Button
-        android:id="@+id/btn_Main4Activity_Base_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="可空类型 空安全"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity_Base_2" />
+        <Button
+            android:id="@+id/btn_Main4Activity_Base_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main4Activity_Base_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main6Activity_Lambda" />
+
+        <Button
+            android:id="@+id/btn_Main4Activity_Base_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="操作符与操作符重载"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity_Base_1" />
+
+        <Button
+            android:id="@+id/btn_Main4Activity_Base_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="可空类型 空安全"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity_Base_2" />
+
+        <Button
+            android:id="@+id/btn_Main7Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="高阶函数"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main4Activity_Base_3" />
+
+        <Button
+            android:id="@+id/btn_Main8Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="集合"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main7Activity" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_companion_object_Main8Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="object companion_object"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main8Activity" />
+
+        <Button
+            android:id="@+id/btn_Main10Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="扩展"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_companion_object_Main8Activity" />
+
+        <Button
+            android:id="@+id/btn_coroutinesActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="协程"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Main10Activity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

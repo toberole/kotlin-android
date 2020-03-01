@@ -1,10 +1,8 @@
 package com.zw.kotlin_android.activities
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.RequiresApi
 import com.zw.kotlin_android.R
 import com.zw.kotlin_android.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_main6__lambda.*
@@ -29,7 +27,7 @@ Lambda表达式:
         // 此种写法：即表达式的返回值类型会根据操作的代码自推导出来。
         val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数的代码 }
 
-        3. lambda表达式作为函数中的参数的时候，这里举一个例子：
+        3. lambda表达式作为函数中的参数
         fun test(a : Int, 参数名 : (参数1 ： 类型，参数2 : 类型, ... ) -> 表达式返回类型){
             ...
         }
@@ -170,4 +168,31 @@ class Main6Activity_Lambda : AppCompatActivity(), View.OnClickListener {
 
         LogUtil.i("lambda", "test3 test3_1: ${test3_1(1, 2)}")
     }
+}
+
+private fun resultByOpt(num1: Int, num2: Int, result: (Int, Int) -> Int): Int {
+    return result(num1, num2)
+}
+
+private fun testDemo() {
+    val result1 = resultByOpt(1, 2) { num1, num2 ->
+        num1 + num2
+    }
+
+    val result2 = resultByOpt(3, 4) { num1, num2 ->
+        num1 - num2
+    }
+
+    val result3 = resultByOpt(5, 6) { num1, num2 ->
+        num1 * num2
+    }
+
+    val result4 = resultByOpt(6, 3) { num1, num2 ->
+        num1 / num2
+    }
+
+    println("result1 = $result1")
+    println("result2 = $result2")
+    println("result3 = $result3")
+    println("result4 = $result4")
 }

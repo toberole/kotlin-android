@@ -12,6 +12,11 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        // 高阶函数写法
+        tv_test.run {
+            text = System.currentTimeMillis().toString()
+        }
+
         // 设置OnClickListener
         btn_MainActivity.setOnClickListener {
             // 构造Intent
@@ -56,6 +61,31 @@ class HomeActivity : AppCompatActivity() {
 
         btn_Main4Activity_Base_3.setOnClickListener {
             var intent = Intent(this@HomeActivity, Main4Activity_Base_3::class.java)
+            startActivity(intent)
+        }
+
+        btn_Main7Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main7Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_Main8Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main8Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_companion_object_Main8Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main9Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_Main10Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, Main10Activity::class.java)
+            startActivity(intent)
+        }
+
+        btn_coroutinesActivity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, CoroutinesActivity::class.java)
             startActivity(intent)
         }
     }
