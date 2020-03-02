@@ -47,4 +47,12 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_test4" />
 
 
+    <Button
+        android:id="@+id/btn_test6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="协程作用域"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_test5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
