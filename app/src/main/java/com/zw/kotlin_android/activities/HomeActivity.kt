@@ -88,5 +88,12 @@ class HomeActivity : AppCompatActivity() {
             var intent = Intent(this@HomeActivity, CoroutinesActivity::class.java)
             startActivity(intent)
         }
+
+        btn_协程异步流_Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, 协程异步流_Activity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }
