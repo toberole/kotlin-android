@@ -21,10 +21,11 @@ import kotlin.reflect.KProperty
 const val TAG = "Example-xxx"
 
 class Example {
-    var p: String by Delegate()
+    var p: String by Delegate_P()
 }
 
-class Delegate {
+// 注意写法
+class Delegate_P {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
         return "$thisRef, thank you for delegating '${property.name}' to me!"
     }

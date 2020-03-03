@@ -94,6 +94,13 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btn_练习_Activity.setOnClickListener {
+            var intent = Intent(this@HomeActivity, 练习_Activity::class.java)
+            startActivity(intent)
+        }
+
+
+
 
     }
 }
