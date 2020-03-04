@@ -9,7 +9,6 @@ import com.zw.kotlin_android.R
 import com.zw.kotlin_android.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_coroutines.*
 import kotlinx.coroutines.*
-import kotlin.math.log
 
 class CoroutinesActivity : AppCompatActivity(), View.OnClickListener {
     var TAG = "cs-xxx"
