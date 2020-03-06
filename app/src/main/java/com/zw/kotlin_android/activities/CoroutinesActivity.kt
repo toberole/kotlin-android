@@ -23,6 +23,47 @@ class CoroutinesActivity : AppCompatActivity(), View.OnClickListener {
         btn_test4.setOnClickListener(this)
         btn_test5.setOnClickListener(this)
         btn_test6.setOnClickListener(this)
+
+        test0_2()
+    }
+
+    private fun test0_2() {
+        GlobalScope.launch(Dispatchers.IO) {
+            LogUtil.i(TAG, "1 Thread.name = ${Thread.currentThread().name}")
+            delay(2000)
+            LogUtil.i(TAG, "2 Thread.name = ${Thread.currentThread().name}")
+        }
+    }
+
+    private fun test0_1() {
+        GlobalScope.launch(Dispatchers.IO) {
+            async {
+                LogUtil.i(TAG, "one ...... ${Thread.currentThread().name}")
+            }
+
+            async {
+                LogUtil.i(TAG, "two ...... ${Thread.currentThread().name}")
+            }
+
+            LogUtil.i(TAG, "test0_1 ...... ${Thread.currentThread().name}")
+
+            var ps = Runtime.getRuntime().availableProcessors()
+            LogUtil.i(TAG, "ps = $ps")
+        }
+    }
+
+    private fun test0() {
+        GlobalScope.launch(Dispatchers.IO) {
+            LogUtil.i(TAG, "1 Thread: ${Thread.currentThread().name},time = ${System.currentTimeMillis()}")
+
+            // 不会创建新的协程，在指定协程上运行挂起代码块，并挂起该协程直至代码块运行完成。
+            withContext(Dispatchers.Main) {
+                delay(2000)
+                LogUtil.i(TAG, "2 Thread: ${Thread.currentThread().name},time = ${System.currentTimeMillis()}")
+            }
+
+            LogUtil.i(TAG, "3 Thread: ${Thread.currentThread().name},time = ${System.currentTimeMillis()}")
+        }
     }
 
     override fun onClick(v: View?) {

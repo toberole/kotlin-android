@@ -6,17 +6,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.zw.kotlin_android.R
-import com.zw.kotlin_android.demo1.Hello
-import com.zw.kotlin_android.demo1.TokenRequest
-import com.zw.kotlin_android.demo1.TokenRequest1
-import com.zw.kotlin_android.demo1.TokenRequestCallback
+import com.zw.kotlin_android.demo1.*
 import com.zw.kotlin_android.utils.LogUtil
 import kotlinx.android.synthetic.main.activity_lianxi.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
+import java.util.concurrent.LinkedBlockingQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 import java.util.concurrent.locks.Lock
+import kotlin.coroutines.CoroutineContext
 
 inline fun <T> check(lock: Lock, body: () -> T): T {
     lock.lock()
@@ -43,9 +41,21 @@ class 练习_Activity : AppCompatActivity(), View.OnClickListener {
 
         test3()
 
+        var a: CoroutineContext
+
+        // 线程池转化为 CoroutineDispatcher
+        ThreadPoolExecutor(1, 1,
+                30, TimeUnit.SECONDS, LinkedBlockingQueue())
+                .asCoroutineDispatcher()
+
         GlobalScope.launch {
 
         }
+
+        var demox1 = Demo_x(100)
+        var demox2 = Demo_x(200)
+        demox1 + demox2
+        LogUtil.i("plus-xxx", "" + demox1.i)
     }
 
     /*
@@ -108,11 +118,11 @@ class 练习_Activity : AppCompatActivity(), View.OnClickListener {
      */
     private fun test1() {
         var reuqest = TokenRequest("", object : TokenRequestCallback {
-            override fun onError(errorCode: Int, errorMsg: String) {
+            override fun onError(errorCode: Int, errorMsg: String?) {
                 LogUtil.i(TAG, "errorCode: $errorCode,errorMsg: $errorMsg")
             }
 
-            override fun onSuccess(res: String) {
+            override fun onSuccess(res: String?) {
                 GlobalScope.launch(Dispatchers.Main) {
                     Toast.makeText(this@练习_Activity, res, Toast.LENGTH_SHORT).show()
                 }
