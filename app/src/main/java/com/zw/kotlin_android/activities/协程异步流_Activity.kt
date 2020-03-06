@@ -22,6 +22,10 @@ class 协程异步流_Activity : AppCompatActivity(), View.OnClickListener {
 
         btn_test1.setOnClickListener(this)
         btn_test2.setOnClickListener(this)
+
+
+
+
     }
 
     override fun onClick(v: View?) {
@@ -58,7 +62,7 @@ class 协程异步流_Activity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun test3(){
+    private fun test3() {
 
     }
 }

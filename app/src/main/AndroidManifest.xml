@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.练习_Activity"></activity>
+        <activity android:name=".activities.LombokActivity"></activity>
+        <activity android:name=".activities.练习_Activity" />
         <activity android:name=".activities.协程异步流_Activity" />
         <activity android:name=".activities.CoroutinesScopeActivity" />
         <activity android:name=".activities.CoroutinesActivity" />
