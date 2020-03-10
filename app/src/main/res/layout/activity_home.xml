@@ -159,6 +159,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_练习_Activity" />
 
+        <Button
+            android:id="@+id/btn_LiveDataActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LiveDataActivity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_LombokActivity" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
