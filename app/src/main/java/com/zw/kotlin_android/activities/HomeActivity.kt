@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zw.kotlin_android.R
 import com.zw.kotlin_android.jetpack.LiveDataActivity
+import com.zw.kotlin_android.jetpack.LiveDataActivity1
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -107,7 +108,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         btn_LiveDataActivity.setOnClickListener {
-            var intent = Intent(this@HomeActivity, LiveDataActivity::class.java)
+            var intent = Intent(this@HomeActivity, LiveDataActivity1::class.java)
             startActivity(intent)
         }
     }
